@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function StatsScore({score}) {
     let stats = {};
 
@@ -17,7 +15,7 @@ export default function StatsScore({score}) {
     }
 
     return (
-        <section className='border p-10 border-stone-300 rounded-lg'>
+        <section className='my-4 border p-10 border-stone-500 rounded-lg'>
             <div className='flex justify-between items-center mb-4'>
                 <div>
                     <h4 className='text-stone-400 text-sm'>SCORE</h4>
@@ -28,7 +26,7 @@ export default function StatsScore({score}) {
                     <p>{stats.status}</p>
                 </div>
             </div>
-            <div className='w-158 h-2 border rounded-2xl'>
+            <div className='h-2 border rounded-2xl'>
                 <div style={styles} className='h-2 rounded-2xl'></div>
             </div>
         </section>

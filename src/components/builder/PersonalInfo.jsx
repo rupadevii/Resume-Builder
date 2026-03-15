@@ -41,18 +41,18 @@ export default function PersonalInfo() {
     console.log(info)
 
     return (
-        <section className='my-8 border px-12 py-8 border-stone-400 rounded-lg'>
+        <section className='my-4 border px-12 py-8 border-stone-500 rounded-lg'>
             <div className='flex gap-3'>
                 <User />
                 <p className='font-bold text-xl'>Personal Info</p>
             </div>
             <form className='my-5'>
-                <div className='flex gap-4 my-2'>
+                <div className='flex gap-5 my-2'>
                     <div className='flex flex-col'>
                         <label htmlFor="name" className="text-stone-500 text-xs my-1">FULL NAME</label>
                         <input 
                             type="text" 
-                            className='border rounded-md p-2 w-75'
+                            className='border rounded-md p-2 w-62'
                             name="name"
                             onChange={handleChange}
                             value={info.personalInfo.name}/>
@@ -61,39 +61,39 @@ export default function PersonalInfo() {
                         <label htmlFor="email" className="text-stone-500 text-xs my-1">EMAIL</label>
                         <input 
                             type="email" 
-                            className='border rounded-md p-2 w-75'
+                            className='border rounded-md p-2 w-62' 
                             name="email"
                             onChange={handleChange}
                             value={info.personalInfo.email}/>
                         {errors.email && (<p className='text-red-500'>{errors.email}</p>)}
                     </div>
                 </div>
-                <div className='flex gap-4 my-2'>
+                <div className='flex gap-5 my-2'>
                     <div className='flex flex-col'>
                         <label htmlFor="phone" className="text-stone-500 text-xs my-1">PHONE</label>
                         <input 
                             type="number" 
-                            className='border rounded-md p-2 w-75'
+                            className='border rounded-md p-2 w-62'
                             name="phone"
                             onChange={handleChange}
                             value={info.personalInfo.phone}/>
                     </div>
                     <div className='flex flex-col'>
-                        <label for="location" className="text-stone-500 text-xs my-1">LOCATION</label>
+                        <label htmlFor="location" className="text-stone-500 text-xs my-1">LOCATION</label>
                         <input 
                             type="text" 
-                            className='border rounded-md p-2 w-75'
+                            className='border rounded-md p-2 w-62'
                             name="location"
                             onChange={handleChange}
                             value={info.personalInfo.location}/>
                     </div>
                 </div>
-                <div className='flex gap-4 my-2'>
+                <div className='flex gap-5 my-2'>
                     <div className='flex flex-col'>
-                        <label for="github" className="text-stone-500 text-xs my-1">GITHUB</label>
+                        <label htmlFor="github" className="text-stone-500 text-xs my-1">GITHUB</label>
                         <input 
                             type="text" 
-                            className='border rounded-md p-2 w-75'
+                            className='border rounded-md p-2 w-62'
                             name="githubURL"
                             onChange={handleChange}
                             value={info.personalInfo.githubURL}/>
@@ -101,10 +101,10 @@ export default function PersonalInfo() {
 
                     </div>
                     <div className='flex flex-col'>
-                        <label for="linkedIn" className="text-stone-500 text-xs my-1">LINKEDIN</label>
+                        <label htmlFor="linkedIn" className="text-stone-500 text-xs my-1">LINKEDIN</label>
                         <input 
                             type="text" 
-                            className='border rounded-md p-2 w-75'
+                            className='border rounded-md p-2 w-62'
                             name="linkedInURL"
                             onChange={handleChange}
                             value={info.personalInfo.linkedInURL}/>
@@ -113,11 +113,11 @@ export default function PersonalInfo() {
                 </div>
                 <div className='flex flex-col my-2'>
                     <div className='flex justify-between'>
-                        <label for="summary" className="text-stone-500 text-xs my-1">PROFESSIONAL SUMMARY</label>
+                        <label htmlFor="summary" className="text-stone-500 text-xs my-1">PROFESSIONAL SUMMARY</label>
                         <span className={`text-sm ${info.personalInfo.summary.length <180 ? "text-yellow-600" : "text-red-500"}`}>{info.personalInfo.summary.length}/200</span>
                     </div>
                     <textarea 
-                        rows="3" className='border rounded-md p-3'
+                        rows="3" className='border rounded-md p-3 '
                         name="summary"
                         onChange={handleChange}
                         value={info.personalInfo.summary}></textarea>
