@@ -4,24 +4,41 @@ import StatsScore from '../components/ui/StatsScore'
 import Experience from '../components/builder/Experience'
 import Projects from '../components/builder/Projects'
 import Skills from '../components/builder/Skills'
-import PreviewPage from './PreviewPage'
+import Preview from '../components/preview/Preview'
+import { useInfo } from '../context/InfoContext'
+import { useEffect, useState } from 'react'
+import { calculateCount, calculateTotalCount } from '../utils/stats'
 
 export default function BuilderPage() {
+    const [score, setScore] = useState(0)
+    const {info} = useInfo()
+
+    useEffect(() => {
+        const totalCount = calculateTotalCount(info)
+        const count = calculateCount(info)
+        // console.log("total", totalCount)
+        // console.log("count", count)
+
+        const currScore = Math.ceil((count/totalCount) * 100)
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setScore(currScore)
+        
+    }, [info])
 
     return (
         <main className='flex pt-24 pb-10'>
             <section className='form-section px-12 w-178 max-h-screen overflow-y-auto'>
-                <StatsScore score={90}/>
+                <StatsScore score={score}/>
                 <PersonalInfo/>
                 <Education/>
-                {/* {info.resumeType === "experienced" && ( */}
+                {info.resumeType === "experienced" && (
                     <Experience/>
-                {/* )}  */}
+                )}
                 <Projects/>
                 <Skills/>
             </section>
             <section className='resume-section max-h-screen overflow-y-auto'>
-                <PreviewPage/>
+                <Preview/>
             </section>
         </main>
     )

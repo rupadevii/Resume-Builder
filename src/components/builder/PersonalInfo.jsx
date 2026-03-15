@@ -1,7 +1,7 @@
 import { User } from 'lucide-react'
 import React, { useState } from 'react'
 import { useInfo } from '../../context/InfoContext';
-const emailValidator = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+import { emailValidator } from '../../utils/validation';
 
 export default function PersonalInfo() {
     const {info, setInfo} = useInfo()

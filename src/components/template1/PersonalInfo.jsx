@@ -7,49 +7,60 @@ export default function PersonalInfo({data}) {
             <div className='header flex flex-col items-center'>
                 <h1>{data.personalInfo.name}</h1>
                 <div className='container-row'>
-                    <div className='container'>
-                        <MapPin size={14}/>
-                        <h2>
-                            {data.personalInfo.location}
-                        </h2>
-                    </div>
-                    <div className='container'>
-                        <Mail size={14}/>
-                        <h2>
-                            {data.personalInfo.email}
-                        </h2>
-                    </div>
-                    <div className='container'>
-                        <Phone size={14}/>
-                        <h2>
-                            {data.personalInfo.phone}
-                        </h2>
-                    </div>
-                    <a href={data.personalInfo.githubURL}>
+                    {data.personalInfo.location && (
                         <div className='container'>
-                            <Github size={14}/>
+                            <MapPin size={14}/>
                             <h2>
-                                {data.personalInfo.githubURL.split("/")[1]}
+                                {data.personalInfo.location}
                             </h2>
                         </div>
-                    </a>
-                    <a href={data.personalInfo.linkedInURL}>
+                    )}
+                    {data.personalInfo.email && (
                         <div className='container'>
-                            <Linkedin size={14}/>
+                            <Mail size={14}/>
                             <h2>
-                                {data.personalInfo.linkedInURL.split("/")[1]}
+                                {data.personalInfo.email}
                             </h2>
                         </div>
-                    </a>
+                    )}
+                    {data.personalInfo.phone && (
+                        <div className='container'>
+                            <Phone size={14}/>
+                            <h2>
+                                {data.personalInfo.phone}
+                            </h2>
+                        </div>
+                    )}
+                    {data.personalInfo.githubURL && (
+                        <a href={data.personalInfo.githubURL}>
+                            <div className='container'>
+                                <Github size={14}/>
+                                <h2>
+                                    {data.personalInfo.githubURL.split("/")[1]}
+                                </h2>
+                            </div>
+                        </a>
+                    )}
+                    {data.personalInfo.linkedInURL && (
+                        <a href={data.personalInfo.linkedInURL}>
+                            <div className='container'>
+                                <Linkedin size={14}/>
+                                <h2>
+                                    {data.personalInfo.linkedInURL.split("/")[1]}
+                                </h2>
+                            </div>
+                        </a>
+                    )}
                 </div>
             </div>
-            <Heading label={"PROFILE"}/>
+            {data.personalInfo.summary && (
+                <Heading label={"PROFILE"}/>
+            )}
             <div>
                 <h3 className='text-sm'>
                     {data.personalInfo.summary}
                 </h3>
             </div>
         </div>
-        
     )
 }

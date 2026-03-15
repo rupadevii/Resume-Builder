@@ -7,12 +7,6 @@
     /* font-family: "EB Garamond", serif; */
 }
 
-/* A4 Page Setup */
-@page {
-    size: A4;
-    margin: 10mm;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -46,16 +40,16 @@ button{
 
 
 .header h1 {
-  margin: 0;
-  font-size: 32px;
-  font-weight: 700;
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
 }
 
 .header h2 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 400;
-  font-style: italic;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
 }
 
 .container{
@@ -93,7 +87,7 @@ button{
     .a4-print-container {
         width: 210mm;
         height: 297mm;
-        padding: 20px; 
+        padding: 15mm; 
         box-shadow: none; 
     }
 }
