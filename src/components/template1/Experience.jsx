@@ -8,7 +8,7 @@ export default function Experience({data}) {
         <div className='experience'>
             <Heading label={"PROFESSIONAL EXPERIENCE"}/>
             {data.workExperience.map((item, index) => (
-                <div className='job' key={index}>
+                <div className='mb-2' key={index}>
                     <div className='flex justify-between'>
                         <div>
                             <h2 className='font-bold'>{item.designation}</h2>

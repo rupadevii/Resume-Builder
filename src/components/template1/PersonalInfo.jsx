@@ -1,7 +1,7 @@
 import Heading from './Heading'
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
 
-export default function personalInfo({data}) {
+export default function PersonalInfo({data}) {
     return (
         <div>
             <div className='header flex flex-col items-center'>
@@ -45,7 +45,7 @@ export default function personalInfo({data}) {
             </div>
             <Heading label={"PROFILE"}/>
             <div>
-                <h3 className='profile-text'>
+                <h3 className='text-sm'>
                     {data.personalInfo.summary}
                 </h3>
             </div>
