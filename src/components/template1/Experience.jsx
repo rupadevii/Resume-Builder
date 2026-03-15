@@ -6,7 +6,7 @@ export default function Experience({data}) {
 
     return (
         <>
-        {data.workExperience[0].companyName && (
+        {data.workExperience[0].designation && (
             <div className='experience'>
                 <Heading label={"PROFESSIONAL EXPERIENCE"}/>
                 {data.workExperience.map((item, index) => (
@@ -23,7 +23,12 @@ export default function Experience({data}) {
                                 <p>{item.desc}</p>
                             </div>
                             <div className='text-sm w-100'>
-                                <span>{formatDate(item.startDate)} - {formatDate(item.endDate)}</span>
+                                {item.startDate && (
+                                    <span>{formatDate(item.startDate)}</span>
+                                )}
+                                {item.endDate && (
+                                    <span>- {formatDate(item.endDate)}</span>
+                                )}
                             </div>
                         </div>
                     </div>

@@ -5,7 +5,7 @@ import { formatDate } from '../../utils/date.util'
 export default function Education({data}) {
     return (
         <>
-            {data.education[0].degree && (
+            {data.education[0].school && (
                 <div className='mt-1'>
                     <Heading label={"EDUCATION"}/>
                     {data.education.map((item, index) => (
@@ -17,7 +17,7 @@ export default function Education({data}) {
                                 </div>
                                 <div className='flex flex-col items-end w-40'>
                                     <p>
-                                        <span>{formatDate(item.startDate)}</span>
+                                        {item.startDate && <span>{formatDate(item.startDate)}</span>}
                                         {item.endDate && (
                                             <span> - {formatDate(item.endDate)}</span>
                                         )}

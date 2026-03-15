@@ -14,7 +14,7 @@ export default function AISection() {
             setLoading(true)
             const res = await axios.post("http://127.0.0.1:5000/api/refine-resume", {resumeData:info})
             setAiResponse(res.data.data)
-            console.log(res.data)
+            localStorage.setItem("ai_response", JSON.stringify(res.data.data))
         }catch(error){
             console.log(error)
         }finally{

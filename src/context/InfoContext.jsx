@@ -1,9 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const InfoContext = createContext()
 
 export const InfoProvider = ({children}) => {
-    const [info, setInfo] = useState({ 
+    const initialState = { 
         resumeType: "",
         personalInfo: {
             name: "",
@@ -47,10 +47,29 @@ export const InfoProvider = ({children}) => {
             soft: [],
             tools: []
         }
+    }
+
+    const [info, setInfo] = useState(() => {
+        return JSON.parse(localStorage.getItem("info")) || initialState
     })
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            localStorage.setItem("info", JSON.stringify(info))
+            console.log("saved...")
+        }, 2000)
+
+        return () => clearTimeout(timer)
+
+    }, [info])
+
+    function clearMockData(){
+        localStorage.removeItem("info")
+        setInfo(initialState)
+    }
+
     return (
-        <InfoContext.Provider value={{info, setInfo}}>
+        <InfoContext.Provider value={{info, setInfo, clearMockData}}>
             {children}
         </InfoContext.Provider>
     )

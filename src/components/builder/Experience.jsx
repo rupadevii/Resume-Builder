@@ -54,15 +54,6 @@ export default function Experience() {
                     )}
                     <div className='flex gap-4 my-2'>
                         <div className='flex flex-col'>
-                            <label htmlFor="name" className="text-stone-500 text-xs my-1">COMPANY</label>
-                            <input 
-                                type="text" 
-                                className='border rounded-md p-2 w-full'
-                                name="companyName"
-                                onChange={(e) => handleChange(e, index)}
-                                value={info.workExperience[index].companyName}/>
-                        </div>
-                        <div className='flex flex-col'>
                             <label htmlFor="email" className="text-stone-500 text-xs my-1">ROLE</label>
                             <input 
                                 type="text" 
@@ -70,6 +61,15 @@ export default function Experience() {
                                 name="designation"
                                 onChange={(e) => handleChange(e, index)}
                                 value={info.workExperience[index].designation}/>
+                        </div>
+                        <div className='flex flex-col'>
+                            <label htmlFor="name" className="text-stone-500 text-xs my-1">COMPANY</label>
+                            <input 
+                                type="text" 
+                                className='border rounded-md p-2 w-full'
+                                name="companyName"
+                                onChange={(e) => handleChange(e, index)}
+                                value={info.workExperience[index].companyName}/>
                         </div>
                     </div>
                     <div className='flex gap-4 my-2 items-center'>

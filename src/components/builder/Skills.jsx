@@ -43,7 +43,7 @@ export default function Skills() {
                         onKeyDown={handleKeyDown}
                         onChange={(e) => setTechnical(e.target.value)}
                         value={technical}/>
-                    <div className='flex my-2 gap-2'>
+                    <div className='flex my-2 gap-2 w-100 flex-wrap'>
                         {info.skills.technical.map((item, idx) => (
                             <div className='border-stone-400 rounded-md px-3 py-1 border flex items-center gap-1' key={idx}>
                                 <span>{item}</span>
@@ -62,7 +62,7 @@ export default function Skills() {
                         onKeyDown={handleKeyDown}
                         onChange={(e) => setSoft(e.target.value)}
                         value={soft}/>
-                    <div className='flex my-2 gap-2'>
+                    <div className='flex my-2 gap-2 w-100 flex-wrap'>
                         {info.skills.soft.map((item, idx) => (
                             <div className='border-stone-400 rounded-md px-3 py-1 border flex items-center gap-1' key={idx}>
                                 <span>{item}</span>
@@ -81,7 +81,7 @@ export default function Skills() {
                         placeholder='Type and press Enter'
                         onChange={(e) => setTools(e.target.value)}
                         value={tools}/>
-                    <div className='flex my-2 gap-2'>
+                    <div className='flex my-2 gap-2 w-100 flex-wrap'>
                         {info.skills.tools.map((item, idx) => (
                             <div className='border-stone-400 rounded-md px-3 py-1 border flex items-center gap-1' key={idx}>
                                 <span>{item}</span>

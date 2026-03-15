@@ -16,7 +16,7 @@ export default function Preview() {
     return (
         <div>
             <div className='mb-3 flex'>
-                <button onClick={handlePrint} className='border px-3 py-1 rounded-md mr-5'>Export PDF</button>
+                <button onClick={handlePrint} className='border px-3 py-1 rounded-md mr-5 hover:bg-stone-300'>Export PDF</button>
                 <div className='flex gap-1'>
                     <div onClick={() => setIsShowing(false)} className={`${!isShowing && "bg-black text-white"} px-3 py-2 rounded-md cursor-pointer`}>Preview</div>
                     <div onClick={() => setIsShowing(true)} className={`${isShowing && "bg-black text-white"} px-3 py-2 rounded-md cursor-pointer`}>AI</div>

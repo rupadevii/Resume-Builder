@@ -87,7 +87,7 @@ export default function Projects() {
                             </div>
                         </button>
                         {show[index] && (
-                            <form className='border rounded-b-md border-stone-400 px-15 py-6'>
+                            <form className='border rounded-b-md border-stone-400 px-10 py-6'>
                             <div className='flex gap-4 my-2'>
                                 <div className='flex flex-col'>
                                     <label htmlFor="name" className="text-stone-500 text-xs my-1">PROJECT TITLE</label>
@@ -108,11 +108,11 @@ export default function Projects() {
                                         value={info.projects[index].liveURL}/>
                                 </div>
                             </div>
-                            <div className='flex gap-4 my-2'>
+                            <div className='my-2'>
                                 <div className='flex flex-col'>
                                     <label htmlFor="phone" className="text-stone-500 text-xs my-1">GITHUB URL</label>
                                     <input 
-                                        type="text" className='border rounded-md p-2 w-48'
+                                        type="text" className='border rounded-md p-2 w-52'
                                         name="githubURL"
                                         onChange={(e) => handleChange(e, index)}
                                         value={info.projects[index].githubURL}/>
@@ -128,7 +128,7 @@ export default function Projects() {
                                         onChange={(e) => setTechStack(e.target.value)}
                                         onKeyDown={(e) => handleKeyDown(e, index)}
                                         value={techStack}/>
-                                    <div className='flex my-2 gap-2'>
+                                    <div className='flex my-2 gap-2 w-100 flex-wrap'>
                                         {info.projects[index].technologies.map((item, idx) => (
                                             <div className='border-stone-400 rounded-md px-3 py-1 border flex items-center gap-1' key={idx}>
                                                 <span>{item}</span>
