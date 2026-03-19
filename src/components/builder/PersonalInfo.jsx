@@ -38,7 +38,6 @@ export default function PersonalInfo() {
         setErrors(prev => ({...prev, [name]: error}))
 
     }
-    console.log(info)
 
     return (
         <section className='my-4 border px-12 py-8 border-stone-500 rounded-lg'>

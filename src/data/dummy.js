@@ -1,9 +1,9 @@
 export const dummyData = {
     resumeType: "",
     personalInfo: {
-        name: "Prarthna Awasthi",
+        name: "Roald Dahl",
         summary: "Aspiring mern stack devloper proficient in React, node and express.",
-        githubURL: "github.com/rupadevii",
+        githubURL: "github.com/roaldDahl",
         linkedInURL: "linkedin.com/abcd",
         email: "prarthnaawasthi@gmail.com",
         phone: "8074765598",

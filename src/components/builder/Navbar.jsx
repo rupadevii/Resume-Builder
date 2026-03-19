@@ -13,7 +13,7 @@ export default function Navbar() {
             <div className="flex gap-5 items-center">
                 <button onClick={() => setInfo(dummyData)} className="border border-white px-3 py-1 rounded-md hover:bg-stone-800">Fill Mock</button>
                 <button onClick={clearMockData} className="border border-white px-3 py-1 rounded-md hover:bg-stone-800">Clear Mock</button>
-                <Link to="/preview"><button>Compare</button></Link>
+                <Link to="/preview"><button className="hover:underline underline-offset-2">Compare</button></Link>
             </div>
         </nav>
     )

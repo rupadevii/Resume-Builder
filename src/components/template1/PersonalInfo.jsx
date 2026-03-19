@@ -53,14 +53,6 @@ export default function PersonalInfo({data}) {
                     )}
                 </div>
             </div>
-            {data.personalInfo.summary && (
-                <Heading label={"PROFILE"}/>
-            )}
-            <div>
-                <h3 className='text-sm'>
-                    {data.personalInfo.summary}
-                </h3>
-            </div>
         </div>
     )
 }

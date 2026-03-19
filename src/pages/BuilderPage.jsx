@@ -8,17 +8,17 @@ import Preview from '../components/preview/Preview'
 import { useInfo } from '../context/InfoContext'
 import { useEffect, useState } from 'react'
 import { calculateCount, calculateTotalCount } from '../utils/stats'
+import { useTemplate } from '../context/TemplateContext'
 
 export default function BuilderPage() {
     const [score, setScore] = useState(0)
     const {info} = useInfo()
+    const {template} = useTemplate()
 
     useEffect(() => {
         const totalCount = calculateTotalCount(info)
         const count = calculateCount(info)
-        // console.log("total", totalCount)
-        // console.log("count", count)
-
+    
         const currScore = Math.ceil((count/totalCount) * 100)
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setScore(currScore)
@@ -31,14 +31,14 @@ export default function BuilderPage() {
                 <StatsScore score={score}/>
                 <PersonalInfo/>
                 <Education/>
-                {info.resumeType === "experienced" && (
+                {info.resumeType === "Experienced" && (
                     <Experience/>
                 )}
                 <Projects/>
                 <Skills/>
             </section>
             <section className='resume-section max-h-screen overflow-y-auto'>
-                <Preview/>
+                <Preview template={template}/>
             </section>
         </main>
     )

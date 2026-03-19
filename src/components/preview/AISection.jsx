@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import AIPreview from './AIPreview'
 import axios from 'axios'
 import { useInfo } from '../../context/InfoContext'
+import Template1 from '../template1/Template1'
+import Template2 from '../template2/Template2'
+import Template3 from '../template3/Template3'
 
-export default function AISection() {
+export default function AISection({template}) {
     const [show, setShow] = useState(false)
     const [loading, setLoading] = useState(false)
     const [aiResponse, setAiResponse] = useState({})
@@ -26,7 +28,6 @@ export default function AISection() {
 
     function handleClick(){
         refineResume()
-        // setShow(true)
     }
 
     if(loading){
@@ -48,7 +49,17 @@ export default function AISection() {
                     </div>
                 </div>
             ) : (
-                <AIPreview data={aiResponse}/>
+                <div>
+                    {template==="template1" && (
+                        <Template1 data={aiResponse}/>
+                    )}
+                    {template==="template2" && (
+                        <Template2 data={aiResponse}/>
+                    )}
+                    {template==="template3" && (
+                        <Template3 data={aiResponse}/>
+                    )}
+                </div>
             )}
         </section>
     )

@@ -20,7 +20,6 @@ export default function Experience() {
         }
 
     }
-    console.log(info.workExperience)
 
     function addEducation(){
         setCount(prev => prev+1)
@@ -82,7 +81,7 @@ export default function Experience() {
                                 value={info.workExperience[index].startDate}/>
                         </div>
                         <div className='flex flex-col'>
-                            <label for="location" className="text-stone-500 text-xs my-1">END DATE</label>
+                            <label htmlFor="location" className="text-stone-500 text-xs my-1">END DATE</label>
                             <input 
                                 type="month" className='border rounded-md p-2 w-35'
                                 name="endDate"
@@ -96,12 +95,12 @@ export default function Experience() {
                                 name="isCurrentCompany"
                                 onChange={(e) => handleChange(e, index)}
                                 checked={info.workExperience[index].isCurrentCompany}/>
-                            <label for="location" className="text-stone-500 text-xs my-1">CURRENT COMPANY</label>
+                            <label htmlFor="location" className="text-stone-500 text-xs my-1">CURRENT COMPANY</label>
                         </div>
                     </div>
                     <div className='flex flex-col my-2'>
                         <div className='flex justify-between'>
-                            <label for="desc" className="text-stone-500 text-xs my-1">DESCRIPTION</label>
+                            <label htmlFor="desc" className="text-stone-500 text-xs my-1">DESCRIPTION</label>
                             <span className={`text-sm ${info.workExperience[index].desc.length <180 ? "text-yellow-600" : "text-red-500"}`}>{info.workExperience[index].desc.length}/200</span>
                         </div>
                         <textarea 

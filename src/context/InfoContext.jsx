@@ -53,6 +53,8 @@ export const InfoProvider = ({children}) => {
         return JSON.parse(localStorage.getItem("info")) || initialState
     })
 
+    const [template, setTemplate] = useState("template1")
+
     useEffect(() => {
         const timer = setTimeout(() => {
             localStorage.setItem("info", JSON.stringify(info))
@@ -69,7 +71,7 @@ export const InfoProvider = ({children}) => {
     }
 
     return (
-        <InfoContext.Provider value={{info, setInfo, clearMockData}}>
+        <InfoContext.Provider value={{info, setInfo, clearMockData, template, setTemplate}}>
             {children}
         </InfoContext.Provider>
     )

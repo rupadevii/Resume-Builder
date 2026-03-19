@@ -120,7 +120,7 @@ export default function Projects() {
                             </div>
                             <div className='my-2'>
                                 <div className='flex flex-col'>
-                                    <label for="technologies" className="text-stone-500 text-xs my-1">TECH STACK</label>
+                                    <label htmlFor="technologies" className="text-stone-500 text-xs my-1">TECH STACK</label>
                                     <input 
                                         type="text" className='border rounded-md p-2 w-full'
                                         name="technologies"
@@ -140,7 +140,7 @@ export default function Projects() {
                             </div>
                             <div className='flex flex-col my-2'>
                                 <div className='flex justify-between'>
-                                    <label for="desc" className="text-stone-500 text-xs my-1">DESCRIPTION</label>
+                                    <label htmlFor="desc" className="text-stone-500 text-xs my-1">DESCRIPTION</label>
                                     <span className={`text-sm ${info.projects[index].desc.length <180 ? "text-yellow-600" : "text-red-500"}`}>{info.projects[index].desc.length}/200</span>
                                 </div>
                                 <textarea 
