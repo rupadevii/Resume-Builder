@@ -1,4 +1,3 @@
-import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
 import HomePage from './pages/HomePage'
@@ -13,8 +12,8 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<LandingPage/>}/>
                 <Route path="/home" element={<HomePage/>}/>
-                <Route path="/build" element={<BuilderPage/>}/>
-                <Route path="/preview" element={<PreviewPage/>}/>
+                <Route path="/build/:template" element={<BuilderPage/>}/>
+                <Route path="/preview/:template" element={<PreviewPage/>}/>
             </Routes>
         </>
     )

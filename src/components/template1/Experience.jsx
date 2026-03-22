@@ -17,7 +17,7 @@ export default function Experience({data}) {
                                     <li className='list-disc'>{item}</li>
                                 ))}
                             </ul> */}
-                            <p>{item.desc}</p>
+                            <p className='text-sm'>{item.desc}</p>
                         </div>
                         <div className='text-sm w-100'>
                             {item.startDate && (

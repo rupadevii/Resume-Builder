@@ -8,12 +8,12 @@ import Preview from '../components/preview/Preview'
 import { useInfo } from '../context/InfoContext'
 import { useEffect, useState } from 'react'
 import { calculateCount, calculateTotalCount } from '../utils/stats'
-import { useTemplate } from '../context/TemplateContext'
+import { useParams } from 'react-router-dom'
 
 export default function BuilderPage() {
     const [score, setScore] = useState(0)
     const {info} = useInfo()
-    const {template} = useTemplate()
+    const {template} = useParams()
 
     useEffect(() => {
         const totalCount = calculateTotalCount(info)

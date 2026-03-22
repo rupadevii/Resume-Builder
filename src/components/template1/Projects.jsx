@@ -11,7 +11,7 @@ export default function Projects({data}) {
                         <div>
                             <span className='font-bold mr-3'>{item.title}</span> 
                             <span className='text-stone-700'>{item.technologies.join(" | ")}</span>
-                            <p>{item.desc}</p>
+                            <p className='text-sm'>{item.desc}</p>
                         </div>
                         <div className='flex gap-2'>
                             {item.liveURL && (

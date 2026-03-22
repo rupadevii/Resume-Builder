@@ -3,10 +3,10 @@ export const dummyData = {
     personalInfo: {
         name: "Roald Dahl",
         summary: "Aspiring mern stack devloper proficient in React, node and express.",
-        githubURL: "github.com/roaldDahl",
+        githubURL: "github.com/rupadevii",
         linkedInURL: "linkedin.com/abcd",
         email: "prarthnaawasthi@gmail.com",
-        phone: "8074765598",
+        phone: "2309485230",
         location: "Hyderabad"
     },
     education: [

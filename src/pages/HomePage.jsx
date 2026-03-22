@@ -1,11 +1,12 @@
 import Button from '../components/ui/Button'
 import { useInfo } from '../context/InfoContext'
 import { useNavigate } from 'react-router-dom'
-import { useTemplate } from '../context/TemplateContext'
+import template1 from '../assets/template1.png'
+import template2 from '../assets/template2.png'
+import template3 from '../assets/template3.png'
 
 export default function HomePage(){
     const {info, setInfo} = useInfo()
-    const {setTemplate} = useTemplate()
     const navigate = useNavigate()
 
     function handleClick(type){
@@ -13,13 +14,12 @@ export default function HomePage(){
     }
     
     function chooseTemplate(type){
-        setTemplate(type)
-        navigate(`/build`)
+        navigate(`/build/${type}`)
     }
 
     return (
-        <main className='flex h-[100vh-20px] justify-center items-center'>
-            <section className='w-190 h-170 text-center flex items-center flex-col justify-center gap-10'>
+        <main className='flex h-screen justify-center items-center pt-8'>
+            <section className='w-190 text-center flex items-center flex-col justify-center gap-4'>
                 <div>
                     <h2 className='text-4xl font-extrabold'>Choose Resume Type</h2>
                     <div className='flex gap-4 my-6'>
@@ -29,10 +29,10 @@ export default function HomePage(){
                 </div>
                 <div>
                     <h2 className='text-4xl font-extrabold'>Choose Template</h2>
-                    <div className='flex gap-4 my-6'>
-                        <button className='flex my-2 rounded-2xl py-15 px-14 capitalize shadow-lg cursor-pointer gap-3 items-center hover:bg-stone-200 text-xl' onClick={() => chooseTemplate("template1")}>Template 1</button>
-                        <button className='flex my-2 rounded-2xl py-5 px-12 capitalize shadow-lg cursor-pointer gap-3 items-center hover:bg-stone-200 text-xl' onClick={() => chooseTemplate("template2")}>Template 2</button>
-                        <button className='flex my-2 rounded-2xl py-5 px-14 capitalize shadow-lg cursor-pointer gap-3 items-center hover:bg-stone-200 text-xl' onClick={() => chooseTemplate("template3")}>Template 3</button>
+                    <div className='flex gap-6 my-4'>
+                        <button className='flex my-2 p-5 capitalize shadow-lg cursor-pointer gap-3 items-center hover:bg-stone-300 text-xl' onClick={() => chooseTemplate("template1")}><img src={template1}/></button>
+                        <button className='flex my-2 p-5 capitalize shadow-lg cursor-pointer gap-3 items-center hover:bg-stone-300 text-xl' onClick={() => chooseTemplate("template2")}><img src={template2}/></button>
+                        <button className='flex my-2 p-5 capitalize shadow-lg cursor-pointer gap-3 items-center hover:bg-stone-300 text-xl' onClick={() => chooseTemplate("template3")}><img src={template3}/></button>
                     </div>
                 </div>
             </section>

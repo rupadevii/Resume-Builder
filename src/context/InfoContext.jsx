@@ -4,7 +4,7 @@ const InfoContext = createContext()
 
 export const InfoProvider = ({children}) => {
     const initialState = { 
-        resumeType: "",
+        resumeType: "Experienced",
         personalInfo: {
             name: "",
             summary: "",
@@ -53,8 +53,6 @@ export const InfoProvider = ({children}) => {
         return JSON.parse(localStorage.getItem("info")) || initialState
     })
 
-    const [template, setTemplate] = useState("template1")
-
     useEffect(() => {
         const timer = setTimeout(() => {
             localStorage.setItem("info", JSON.stringify(info))
@@ -66,12 +64,13 @@ export const InfoProvider = ({children}) => {
     }, [info])
 
     function clearMockData(){
-        localStorage.removeItem("info")
+        localStorage.setItem("info", JSON.stringify(initialState))
+        // localStorage.removeItem("info")
         setInfo(initialState)
     }
 
     return (
-        <InfoContext.Provider value={{info, setInfo, clearMockData, template, setTemplate}}>
+        <InfoContext.Provider value={{info, setInfo, clearMockData}}>
             {children}
         </InfoContext.Provider>
     )

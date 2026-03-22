@@ -23,11 +23,13 @@ export default function PersonalInfo() {
             if(!emailValidator.test(value)) error = "Enter valid email!"
         }
 
-        if(name==="githubURL"){
+        if(name === "githubURL"){
+            // if(!value.includes('https://github.com/')) error = "Enter valid github link"
             if(!value.includes('github.com/')) error = "Enter valid github link"
         }
 
-        if(name==="linkedInURL"){
+        if(name === "linkedInURL"){
+            // if(!value.includes('https://linkedin.com/')) error = "Enter valid linkedIn link"
             if(!value.includes('linkedin.com/')) error = "Enter valid linkedIn link"
         }
 
@@ -40,7 +42,7 @@ export default function PersonalInfo() {
     }
 
     return (
-        <section className='my-4 border px-12 py-8 border-stone-500 rounded-lg'>
+        <section className='my-6 border px-10 py-8 border-stone-500 rounded-lg'>
             <div className='flex gap-3'>
                 <User />
                 <p className='font-bold text-xl'>Personal Info</p>
@@ -51,18 +53,20 @@ export default function PersonalInfo() {
                         <label htmlFor="name" className="text-stone-500 text-xs my-1">FULL NAME</label>
                         <input 
                             type="text" 
-                            className='border rounded-md p-2 w-62'
+                            className='border rounded-md p-2 w-64'
                             name="name"
                             onChange={handleChange}
+                            placeholder='John Doe'
                             value={info.personalInfo.name}/>
                     </div>
                     <div className='flex flex-col'>
                         <label htmlFor="email" className="text-stone-500 text-xs my-1">EMAIL</label>
                         <input 
                             type="email" 
-                            className='border rounded-md p-2 w-62' 
+                            className='border rounded-md p-2 w-64' 
                             name="email"
                             onChange={handleChange}
+                            placeholder='abc@gmail.com'
                             value={info.personalInfo.email}/>
                         {errors.email && (<p className='text-red-500'>{errors.email}</p>)}
                     </div>
@@ -72,8 +76,9 @@ export default function PersonalInfo() {
                         <label htmlFor="phone" className="text-stone-500 text-xs my-1">PHONE</label>
                         <input 
                             type="number" 
-                            className='border rounded-md p-2 w-62'
+                            className='border rounded-md p-2 w-64'
                             name="phone"
+                            placeholder='9876543210'
                             onChange={handleChange}
                             value={info.personalInfo.phone}/>
                     </div>
@@ -81,8 +86,9 @@ export default function PersonalInfo() {
                         <label htmlFor="location" className="text-stone-500 text-xs my-1">LOCATION</label>
                         <input 
                             type="text" 
-                            className='border rounded-md p-2 w-62'
+                            className='border rounded-md p-2 w-64'
                             name="location"
+                            placeholder='India'
                             onChange={handleChange}
                             value={info.personalInfo.location}/>
                     </div>
@@ -92,8 +98,9 @@ export default function PersonalInfo() {
                         <label htmlFor="github" className="text-stone-500 text-xs my-1">GITHUB</label>
                         <input 
                             type="text" 
-                            className='border rounded-md p-2 w-62'
+                            className='border rounded-md p-2 w-64'
                             name="githubURL"
+                            placeholder='github.com/john'
                             onChange={handleChange}
                             value={info.personalInfo.githubURL}/>
                         {errors.githubURL && (<p className='text-red-500'>{errors.githubURL}</p>)}
@@ -103,9 +110,10 @@ export default function PersonalInfo() {
                         <label htmlFor="linkedIn" className="text-stone-500 text-xs my-1">LINKEDIN</label>
                         <input 
                             type="text" 
-                            className='border rounded-md p-2 w-62'
+                            className='border rounded-md p-2 w-64'
                             name="linkedInURL"
                             onChange={handleChange}
+                            placeholder='linkedin.com/john'
                             value={info.personalInfo.linkedInURL}/>
                         {errors.linkedInURL && (<p className='text-red-500'>{errors.linkedInURL}</p>)}
                     </div>

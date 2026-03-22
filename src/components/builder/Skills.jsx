@@ -32,7 +32,7 @@ export default function Skills() {
                 <p className='font-bold text-xl'>Skills</p>
             </div>
             
-            <form className='px-10 py-6 relative' >    
+            <form className='px-2 py-6 relative' >    
                 <div className='flex flex-col'>
                     <label htmlFor="name" className="text-stone-900 text-xs my-1">TECHNICAL SKILLS</label>
                     <input 

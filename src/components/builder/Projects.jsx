@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useInfo } from '../../context/InfoContext'
-import { BookOpenText, ChevronDown, ChevronUp, FolderGit2, Plus, Trash2, X } from 'lucide-react'
+import { ChevronDown, ChevronUp, FolderGit2, Plus, Trash2, X } from 'lucide-react'
 
 export default function Projects() {
-    const [count, setCount] = useState(1)
     const {info, setInfo} = useInfo()
+    const [count, setCount] = useState(info.projects.length)
     const [show, setShow] = useState(new Array(count).fill(false))
     const [techStack, setTechStack] = useState("")
-    // console.log(count)
-    // console.log("show", show)
 
     useEffect(() => {
         // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -27,29 +25,18 @@ export default function Projects() {
             if(value.length > 200) return
         }
 
-        // if(name === "technologies"){
-        //     const tech = value.split(";")
-        //     setInfo(prev => ({...prev, projects: prev.projects.map((item, idx) => index === idx ? {...item, technologies: [...item.technologies, tech]}: item)}))
-        // }
-        // else{
         setInfo(prev => ({...prev, projects: prev.projects.map((item, idx) => index === idx ? {...item, [name]: value}: item)}))
-        // }
-        
     }
-    // console.log("projects", info.projects)
 
     function handleKeyDown(e, index){
-        // console.log(e)
 
         if(e.key === "Enter"){
-            // console.log(techStack)
             setInfo(prev => ({...prev, projects: prev.projects.map((item, idx) => index === idx ? {...item, technologies: [...item.technologies, techStack]}: item)}))
             setTechStack("")
         }
     }
     
     function addProject(){
-        setCount(prev => prev+1)
         setInfo(prev => ({...prev, projects: [...prev.projects, {
             title: "",
             desc: "",
@@ -60,18 +47,23 @@ export default function Projects() {
     }
 
     function deleteTechStack(e, projectIndex, skillIdx){
-        // const filteredTechnologies = info.projects[projectIndex].technologies.filter((item, index) => index !== skillIdx)
         setInfo(prev => ({...prev, projects: prev.projects.map((item, index) => index === projectIndex ? {...item, technologies: item.technologies.filter((item, idx) => idx !== skillIdx)}: item)}))
     }
 
+    function deleteProject(e, index){
+        setCount(prev => prev-1)
+
+        setInfo(prev => ({...prev, projects: prev.projects.filter((item, idx) => index!==idx)}))
+    }
+
     return (
-        <section className='my-4 border px-12 py-8 border-stone-500 rounded-lg'>
+        <section className='my-6 border px-12 py-8 border-stone-500 rounded-lg'>
             <div className='flex gap-3'>
                 <FolderGit2 />
                 <p className='font-bold text-xl'>Projects</p>
             </div>
             <div className='my-5'>
-                {[...Array(count).keys()].map((_, index) => (
+                {info.projects.map((item, index) => (
                     <div className='my-3' key={index}>
                         <button onClick={() => toggleDisplay(index)} className='border rounded-md py-2 flex justify-between px-4 items-center w-full'>
                             <div className='flex gap-2 items-center'>
@@ -82,15 +74,20 @@ export default function Projects() {
                                 )}
                                 {info.projects[index].title || "New Project"}
                             </div>
-                            <div className='rounded-md hover:bg-stone-300 p-2 cursor-pointer'>
+                            {index !== 0 && (
+                            <div className='rounded-md hover:bg-stone-300 p-2 cursor-pointer' onClick={(e) => {
+                                deleteProject(e, index)
+                                e.stopPropagation()
+                            }}>
                                 <Trash2 size={16}/>
                             </div>
+                            )}
                         </button>
                         {show[index] && (
                             <form className='border rounded-b-md border-stone-400 px-10 py-6'>
-                            <div className='flex gap-4 my-2'>
+                            <div className='flex gap-4 mb-2'>
                                 <div className='flex flex-col'>
-                                    <label htmlFor="name" className="text-stone-500 text-xs my-1">PROJECT TITLE</label>
+                                    <label htmlFor="name" className="text-stone-500 text-xs mb-1">PROJECT TITLE</label>
                                     <input 
                                         type="text" 
                                         className='border rounded-md p-2 w-full'

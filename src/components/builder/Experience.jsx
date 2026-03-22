@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
 import { BookOpenText, Plus, Trash2 } from 'lucide-react'
 import { useInfo } from '../../context/InfoContext'
 
 export default function Experience() {
-    const [count, setCount] = useState(1)
     const {info, setInfo} = useInfo()
         
     function handleChange(e, index){
@@ -22,7 +20,6 @@ export default function Experience() {
     }
 
     function addEducation(){
-        setCount(prev => prev+1)
         setInfo(prev => ({...prev, workExperience: [...prev.workExperience, {
             companyName: "",
             startDate: "",
@@ -34,17 +31,16 @@ export default function Experience() {
     }
 
     function deleteExperience(idx){
-        setCount(prev => prev-1)
         setInfo(prev => ({...prev, workExperience: prev.workExperience.filter((item, index) => index !== idx)}))
     }
 
     return (
-        <section className='my-4 border px-10 pt-8 border-stone-500 rounded-lg'>
+        <section className='my-6 border px-10 py-8 border-stone-500 rounded-lg'>
             <div className='flex gap-3'>
                 <BookOpenText />
                 <p className='font-bold text-xl'>Experience</p>
             </div>
-            {[...Array(count).keys()].map((_, index) => (
+            {info.workExperience.map((item, index) => (
                 <form className='my-6 border rounded-md border-stone-400 px-10 py-6 relative' key={index}>
                     {index !== 0 && (
                         <div className='absolute right-3 top-3 rounded-md hover:bg-stone-300 p-2 cursor-pointer' onClick={() => deleteExperience(index)}>
@@ -112,7 +108,7 @@ export default function Experience() {
             </form>
             ))}
             
-            <button disabled={count===3} onClick={addEducation} className='w-full border border-stone-400 rounded-md px-3 py-2 flex items-center justify-center cursor-pointer'><Plus size={18}/>Add</button>
+            <button disabled={info.workExperience.length===3} onClick={addEducation} className='w-full border border-stone-400 rounded-md px-3 py-2 flex items-center justify-center cursor-pointer'><Plus size={18}/>Add</button>
            
         </section>
     )
