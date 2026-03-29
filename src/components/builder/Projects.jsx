@@ -57,7 +57,7 @@ export default function Projects() {
     }
 
     return (
-        <section className='my-6 border px-12 py-8 border-stone-500 rounded-lg'>
+        <section className='builder my-6 border px-12 py-8 border-stone-500 rounded-lg shadow-md'>
             <div className='flex gap-3'>
                 <FolderGit2 />
                 <p className='font-bold text-xl'>Projects</p>
@@ -85,7 +85,7 @@ export default function Projects() {
                         </button>
                         {show[index] && (
                             <form className='border rounded-b-md border-stone-400 px-10 py-6'>
-                            <div className='flex gap-4 mb-2'>
+                            <div className='lg:flex-nowrap flex gap-4 mb-2 md:flex-wrap items-center'>
                                 <div className='flex flex-col'>
                                     <label htmlFor="name" className="text-stone-500 text-xs mb-1">PROJECT TITLE</label>
                                     <input 
@@ -96,7 +96,7 @@ export default function Projects() {
                                         value={info.projects[index].title}/>
                                 </div>
                                 <div className='flex flex-col'>
-                                    <label htmlFor="liveURL" className="text-stone-500 text-xs my-1">LIVE URL</label>
+                                    <label htmlFor="liveURL" className="text-stone-500 text-xs mb-1">LIVE URL</label>
                                     <input 
                                         type="text" 
                                         className='border rounded-md p-2 w-full'
@@ -109,7 +109,7 @@ export default function Projects() {
                                 <div className='flex flex-col'>
                                     <label htmlFor="phone" className="text-stone-500 text-xs my-1">GITHUB URL</label>
                                     <input 
-                                        type="text" className='border rounded-md p-2 w-52'
+                                        type="text" className='border rounded-md p-2 lg:w-[48%] w-30'
                                         name="githubURL"
                                         onChange={(e) => handleChange(e, index)}
                                         value={info.projects[index].githubURL}/>
@@ -153,7 +153,9 @@ export default function Projects() {
                 ))}
             </div>
             
-            <div onClick={addProject} className='border border-stone-400 rounded-md px-3 py-2 flex items-center justify-center cursor-pointer'><Plus size={18}/>Add</div>
+            <button 
+             disabled={info.projects.length===3} onClick={addProject}
+                className='w-full border border-stone-400 rounded-md px-3 py-2 flex items-center justify-center cursor-pointer hover:bg-stone-300 hover:border-black'><Plus size={18}/>Add</button>
            
         </section>
     )

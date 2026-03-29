@@ -36,7 +36,7 @@ export default function PersonalInfo({data}) {
                             <div className='container'>
                                 <Github size={14}/>
                                 <h2>
-                                    {data.personalInfo.githubURL.split("/")[1]}
+                                    {data.personalInfo.githubURL.split("/")[3]}
                                 </h2>
                             </div>
                         </a>
@@ -46,7 +46,7 @@ export default function PersonalInfo({data}) {
                             <div className='container'>
                                 <Linkedin size={14}/>
                                 <h2>
-                                    {data.personalInfo.linkedInURL.split("/")[1]}
+                                    {data.personalInfo.linkedInURL.split("/")[3]}
                                 </h2>
                             </div>
                         </a>

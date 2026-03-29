@@ -2,8 +2,10 @@ import { Route, Routes } from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
 import HomePage from './pages/HomePage'
 import BuilderPage from './pages/BuilderPage'
-import PreviewPage from './pages/PreviewPage'
 import Navbar from './components/builder/Navbar'
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 export default function App() {
     return (
@@ -13,7 +15,6 @@ export default function App() {
                 <Route path="/" element={<LandingPage/>}/>
                 <Route path="/home" element={<HomePage/>}/>
                 <Route path="/build/:template" element={<BuilderPage/>}/>
-                <Route path="/preview/:template" element={<PreviewPage/>}/>
             </Routes>
         </>
     )

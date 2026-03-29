@@ -1,6 +1,5 @@
 import { BookOpenText, Plus, Trash2 } from 'lucide-react'
 import { useInfo } from '../../context/InfoContext'
-import "react-datepicker/dist/react-datepicker.css";
 
 export default function Education() {
     const {info, setInfo} = useInfo()
@@ -30,7 +29,7 @@ export default function Education() {
     }
 
     return (
-        <div className='my-6 border px-10 py-8 border-stone-500 rounded-lg'>
+        <div className='builder my-6 border px-10 py-8 border-stone-500 rounded-lg shadow-md'>
             <div className='flex gap-3'>
                 <BookOpenText />
                 <p className='font-bold text-xl'>Education</p>
@@ -91,7 +90,12 @@ export default function Education() {
             </form>
             ))}
             
-            <button disabled={info.education.length===3} onClick={addEducation} className='border border-stone-400 rounded-md px-3 py-2 flex items-center justify-center cursor-pointer w-full'><Plus size={18}/>Add</button>
+            <button 
+                disabled={info.education.length===3} 
+                onClick={addEducation} 
+                className='border border-stone-400 hover:bg-stone-300 hover:border-black rounded-md px-3 py-2 flex items-center justify-center cursor-pointer w-full'>
+                    <Plus size={18}/>Add
+            </button>
            
         </div>
     )

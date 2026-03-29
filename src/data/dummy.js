@@ -3,8 +3,8 @@ export const dummyData = {
     personalInfo: {
         name: "Roald Dahl",
         summary: "Aspiring mern stack devloper proficient in React, node and express.",
-        githubURL: "github.com/rupadevii",
-        linkedInURL: "linkedin.com/abcd",
+        githubURL: "https://github.com/rupadevii",
+        linkedInURL: "https://linkedin.com/abcd",
         email: "prarthnaawasthi@gmail.com",
         phone: "2309485230",
         location: "Hyderabad"
@@ -13,8 +13,8 @@ export const dummyData = {
         {
             school: "XYZ engineering college",
             degree: "Bachelor of Technology",
-            startDate: "Dec 2021",
-            endDate: "Jun 2025",
+            startDate: "12-2021",
+            endDate: "06-2025",
             cgpa: "0.0",
         },
         {
@@ -45,7 +45,7 @@ export const dummyData = {
             companyName: "Solutions Inc",
             startDate: "Jun 2024",
             endDate: "Dec 2024",
-            designation: "Frontend stack developer intern",
+            designation: "Frontend developer intern",
             desc: "Built an ecommerce platform for a local store. Increased revenue by 200%",
             isCurrentCompany: false
         }

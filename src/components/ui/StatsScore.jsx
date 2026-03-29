@@ -15,7 +15,7 @@ export default function StatsScore({score}) {
     }
 
     return (
-        <section className='my-4 p-10 rounded-lg shadow-md border-t-2'>
+        <section className='builder my-4 p-10 rounded-lg shadow-xl'>
             <div className='flex justify-between items-center mb-4'>
                 <div>
                     <h4 className='text-stone-400 text-sm'>SCORE</h4>

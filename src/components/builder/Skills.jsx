@@ -26,7 +26,7 @@ export default function Skills() {
     // console.log(info.skills)
 
     return (
-        <section className='my-6 border px-10 py-8 border-stone-500 rounded-lg'>
+        <section className='builder my-6 border px-10 py-8 border-stone-500 rounded-lg shadow-md'>
             <div className='flex gap-3'>
                 <Lightbulb />
                 <p className='font-bold text-xl'>Skills</p>

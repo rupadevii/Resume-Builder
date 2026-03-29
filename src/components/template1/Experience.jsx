@@ -12,12 +12,12 @@ export default function Experience({data}) {
                         <div className='w-380'>
                             <h2 className='font-bold'>{item.designation}</h2>
                             <p className='text-stone-700 italic'>{item.companyName}</p>
-                            {/* <ul>
-                                {item.desc.split(".").map(item => (
+                            <ul className='pl-4'>
+                                {item.desc.split("\n").slice(0).map(item => (
                                     <li className='list-disc'>{item}</li>
                                 ))}
-                            </ul> */}
-                            <p className='text-sm'>{item.desc}</p>
+                            </ul>
+                            {/* <p className='text-sm whitespace-pre-wrap'>{item.desc}</p> */}
                         </div>
                         <div className='text-sm w-100'>
                             {item.startDate && (

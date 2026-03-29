@@ -42,13 +42,13 @@ export default function PersonalInfo() {
     }
 
     return (
-        <section className='my-6 border px-10 py-8 border-stone-500 rounded-lg'>
+        <section className='builder my-6 border px-10 py-8 border-stone-500 rounded-lg shadow-md'>
             <div className='flex gap-3'>
                 <User />
                 <p className='font-bold text-xl'>Personal Info</p>
             </div>
             <form className='my-5'>
-                <div className='flex gap-5 my-2'>
+                <div className='flex gap-5 my-2 md:flex-wrap'>
                     <div className='flex flex-col'>
                         <label htmlFor="name" className="text-stone-500 text-xs my-1">FULL NAME</label>
                         <input 
@@ -71,7 +71,7 @@ export default function PersonalInfo() {
                         {errors.email && (<p className='text-red-500'>{errors.email}</p>)}
                     </div>
                 </div>
-                <div className='flex gap-5 my-2'>
+                <div className='flex gap-5 my-2 md:flex-wrap'>
                     <div className='flex flex-col'>
                         <label htmlFor="phone" className="text-stone-500 text-xs my-1">PHONE</label>
                         <input 
@@ -93,7 +93,7 @@ export default function PersonalInfo() {
                             value={info.personalInfo.location}/>
                     </div>
                 </div>
-                <div className='flex gap-5 my-2'>
+                <div className='flex gap-5 my-2 md:flex-wrap'>
                     <div className='flex flex-col'>
                         <label htmlFor="github" className="text-stone-500 text-xs my-1">GITHUB</label>
                         <input 

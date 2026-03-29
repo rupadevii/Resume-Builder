@@ -35,13 +35,13 @@ export default function Experience() {
     }
 
     return (
-        <section className='my-6 border px-10 py-8 border-stone-500 rounded-lg'>
+        <section className='builder my-6 border px-10 py-8 border-stone-500 rounded-lg shadow-md'>
             <div className='flex gap-3'>
                 <BookOpenText />
                 <p className='font-bold text-xl'>Experience</p>
             </div>
             {info.workExperience.map((item, index) => (
-                <form className='my-6 border rounded-md border-stone-400 px-10 py-6 relative' key={index}>
+                <form className='my-6 border rounded-md border-stone-500 px-10 py-6 relative' key={index}>
                     {index !== 0 && (
                         <div className='absolute right-3 top-3 rounded-md hover:bg-stone-300 p-2 cursor-pointer' onClick={() => deleteExperience(index)}>
                             <Trash2 size={16}/>
@@ -108,7 +108,12 @@ export default function Experience() {
             </form>
             ))}
             
-            <button disabled={info.workExperience.length===3} onClick={addEducation} className='w-full border border-stone-400 rounded-md px-3 py-2 flex items-center justify-center cursor-pointer'><Plus size={18}/>Add</button>
+            <button 
+                disabled={info.workExperience.length===3} 
+                onClick={addEducation} 
+                className='w-full border border-stone-400 rounded-md px-3 py-2 flex items-center justify-center cursor-pointer hover:bg-stone-300 hover:border-black'>
+                    <Plus size={18}/>Add
+            </button>
            
         </section>
     )

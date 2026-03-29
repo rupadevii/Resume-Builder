@@ -30,9 +30,9 @@ export default function HomePage(){
                 <div>
                     <h2 className='text-4xl font-extrabold'>Choose Template</h2>
                     <div className='flex gap-6 my-4'>
-                        <button className='flex my-2 p-5 capitalize shadow-lg cursor-pointer gap-3 items-center hover:bg-stone-300 text-xl' onClick={() => chooseTemplate("template1")}><img src={template1}/></button>
-                        <button className='flex my-2 p-5 capitalize shadow-lg cursor-pointer gap-3 items-center hover:bg-stone-300 text-xl' onClick={() => chooseTemplate("template2")}><img src={template2}/></button>
-                        <button className='flex my-2 p-5 capitalize shadow-lg cursor-pointer gap-3 items-center hover:bg-stone-300 text-xl' onClick={() => chooseTemplate("template3")}><img src={template3}/></button>
+                        <button className='flex my-2 p-5 capitalize shadow-lg cursor-pointer gap-3 items-center hover:bg-stone-400 text-xl' onClick={() => chooseTemplate("template1")}><img src={template1}/></button>
+                        <button className='flex my-2 p-5 capitalize shadow-lg cursor-pointer gap-3 items-center hover:bg-stone-400 text-xl' onClick={() => chooseTemplate("template2")}><img src={template2}/></button>
+                        <button className='flex my-2 p-5 capitalize shadow-lg cursor-pointer gap-3 items-center hover:bg-stone-400 text-xl' onClick={() => chooseTemplate("template3")}><img src={template3}/></button>
                     </div>
                 </div>
             </section>
