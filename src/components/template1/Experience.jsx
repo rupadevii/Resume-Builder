@@ -1,5 +1,3 @@
-import React from 'react'
-import Heading from './Heading'
 import { formatDate } from '../../utils/date.util'
 
 export default function Experience({data}) {
@@ -12,12 +10,6 @@ export default function Experience({data}) {
                         <div className='w-380'>
                             <h2 className='font-bold'>{item.designation}</h2>
                             <p className='text-stone-700 italic'>{item.companyName}</p>
-                            <ul className='pl-4'>
-                                {item.desc.split("\n").slice(0).map(item => (
-                                    <li className='list-disc'>{item}</li>
-                                ))}
-                            </ul>
-                            {/* <p className='text-sm whitespace-pre-wrap'>{item.desc}</p> */}
                         </div>
                         <div className='text-sm w-100'>
                             {item.startDate && (
@@ -27,6 +19,14 @@ export default function Experience({data}) {
                                 <span>- {formatDate(item.endDate)}</span>
                             )}
                         </div>
+                    </div>
+                            {/* <p className='text-sm whitespace-pre-wrap'>{item.desc}</p> */}
+                    <div>
+                        <ul className='pl-4'>
+                            {item.desc.split("\n").slice(0).map((item, idx) => (
+                                <li className='list-disc' key={idx}>{item}</li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             ))}

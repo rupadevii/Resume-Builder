@@ -35,7 +35,7 @@ export default function Experience() {
     }
 
     return (
-        <section className='builder my-6 border px-10 py-8 border-stone-500 rounded-lg shadow-md'>
+        <section className='builder my-6 px-10 py-8 border-stone-500 rounded-lg shadow-2xl'>
             <div className='flex gap-3'>
                 <BookOpenText />
                 <p className='font-bold text-xl'>Experience</p>
@@ -67,7 +67,7 @@ export default function Experience() {
                                 value={info.workExperience[index].companyName}/>
                         </div>
                     </div>
-                    <div className='flex gap-4 my-2 items-center'>
+                    <div className='flex gap-4 my-2 items-center flex-wrap'>
                         <div className='flex flex-col'>
                             <label htmlFor="phone" className="text-stone-500 text-xs my-1">START DATE</label>
                             <input 
@@ -87,7 +87,7 @@ export default function Experience() {
                         </div>
                         <div className='flex gap-2 justify-center'>
                             <input 
-                                type="checkbox" className='border rounded-md p-2'
+                                type="checkbox" className='border rounded-md p-2 h-5'
                                 name="isCurrentCompany"
                                 onChange={(e) => handleChange(e, index)}
                                 checked={info.workExperience[index].isCurrentCompany}/>

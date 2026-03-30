@@ -30,7 +30,7 @@ export default function AISection({template, setShow, show, aiResponse, setAiRes
                 return
             }
 
-            const res = await axios.post(`${URL}/api/refine-resume`, {resumeData:info})
+            const res = await axios.post(`/api/refine-resume`, {resumeData:info})
             setAiResponse(res.data.data)
             localStorage.setItem("ai_response", JSON.stringify(res.data.data))
             setShow(true)

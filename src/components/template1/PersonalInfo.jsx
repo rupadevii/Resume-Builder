@@ -1,4 +1,3 @@
-import Heading from './Heading'
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
 
 export default function PersonalInfo({data}) {

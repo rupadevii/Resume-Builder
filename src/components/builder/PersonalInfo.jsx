@@ -42,7 +42,7 @@ export default function PersonalInfo() {
     }
 
     return (
-        <section className='builder my-6 border px-10 py-8 border-stone-500 rounded-lg shadow-md'>
+        <section className='builder my-6 px-10 py-8 border-stone-500 rounded-lg shadow-2xl'>
             <div className='flex gap-3'>
                 <User />
                 <p className='font-bold text-xl'>Personal Info</p>

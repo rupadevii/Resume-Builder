@@ -4,9 +4,7 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     /* background-color: rgb(246, 246, 246); */
     /* background-image: linear-gradient(to right, rgb(237, 236, 236), rgb(216, 210, 210), rgb(216, 210, 210)); */
-    /* background-color: rgb(237, 236, 236); */
-    /* background-color: rgb(85, 3, 3); */
-    background-color: rgb(56, 18, 51);
+    background-color: rgb(237, 236, 236);
 
     margin: 0;
     padding: 0;
@@ -18,9 +16,6 @@ button{
 
 .builder{
     background-color: rgb(238, 235, 235);
-    /* background-image: linear-gradient(to right, rgb(199, 196, 196), rgb(216, 210, 210), rgb(150, 146, 146)); */
-    /* background-color: rgb(41, 144, 50); */
-    /* background-color: rgb(56, 18, 51); */
 }
 
 input, textarea{
@@ -31,10 +26,10 @@ input, textarea{
     width: 210mm;
     min-height: 297mm;
     margin: auto;
-    padding: 10mm 20mm;
+    padding: 10mm 18mm;
     background: white;
     box-sizing: border-box;
-    border: 2px solid black
+    border: 1px solid black
 }
 
 .resume p{
@@ -109,7 +104,7 @@ input, textarea{
     .a4-print-container {
         width: 210mm;
         height: 297mm;
-        padding: 15mm; 
+        padding: 10mm 15mm; 
         box-shadow: none; 
     }
 }

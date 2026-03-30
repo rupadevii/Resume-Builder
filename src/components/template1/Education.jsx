@@ -1,5 +1,3 @@
-import React from 'react'
-import Heading from './Heading'
 import { formatDate } from '../../utils/date.util'
 
 export default function Education({data}) {

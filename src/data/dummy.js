@@ -13,38 +13,38 @@ export const dummyData = {
         {
             school: "XYZ engineering college",
             degree: "Bachelor of Technology",
-            startDate: "12-2021",
-            endDate: "06-2025",
+            startDate: "2021-12",
+            endDate: "2025-06",
             cgpa: "0.0",
         },
         {
             school: "PQRS Junior College",
             degree: "Intermediate",
-            startDate: "Jun 2019",
-            endDate: "Sep 2021",
+            startDate: "2019-06",
+            endDate: "2021-09",
             cgpa: "0.0",
         },
         {
             school: "ABC High School",
             degree: "Secondary School of Certificate",
-            startDate: "Jan 2014",
-            endDate: "Jun 2019",
+            startDate: "2014-01",
+            endDate: "2019-06",
             cgpa: "0.0",
         }
     ],
     workExperience: [
         {
             companyName: "Techie Gmbh",
-            startDate: "Jan 2025",
-            endDate: "Jan 2026",
+            startDate: "2025-01",
+            endDate: "2026-05",
             designation: "Frontend Developer",
             desc: "Built a content management system. Integrated API",
             isCurrentCompany: false
         },
         {
             companyName: "Solutions Inc",
-            startDate: "Jun 2024",
-            endDate: "Dec 2024",
+            startDate: "2024-06",
+            endDate: "2024-12",
             designation: "Frontend developer intern",
             desc: "Built an ecommerce platform for a local store. Increased revenue by 200%",
             isCurrentCompany: false

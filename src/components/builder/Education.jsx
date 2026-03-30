@@ -29,7 +29,7 @@ export default function Education() {
     }
 
     return (
-        <div className='builder my-6 border px-10 py-8 border-stone-500 rounded-lg shadow-md'>
+        <div className='builder my-6 px-10 py-8 border-stone-500 rounded-lg shadow-2xl'>
             <div className='flex gap-3'>
                 <BookOpenText />
                 <p className='font-bold text-xl'>Education</p>
@@ -61,7 +61,7 @@ export default function Education() {
                                 value={info.education[index].degree}/>
                         </div>
                     </div>
-                    <div className='flex gap-4 my-2'>
+                    <div className='flex gap-4 my-2 flex-wrap'>
                         <div className='flex flex-col'>
                             <label htmlFor="phone" className="text-stone-500 text-xs my-1">START DATE</label>
                             <input 
